@@ -26,7 +26,13 @@ breakIncrement.onclick = ()=>{
     breakLength.innerHTML = breakTime;
 };
 sessionDecrement.onclick = ()=>{
-    sessionTime--;
+    //minimum working time
+    if(sessionTime>10){
+        sessionTime--;
+    }
+    else{
+        sessionTime = 10;
+    }
     count  = sessionTime * 60; 
     console.log('sessionTime', sessionTime);
     sessionLength.innerHTML = sessionTime;
@@ -34,7 +40,14 @@ sessionDecrement.onclick = ()=>{
     
 }
 sessionIncrement.onclick = ()=>{
-    sessionTime++;
+    //maximum working time
+    if(sessionTime<60){
+        sessionTime++;
+    }
+    else{
+        sessionTime = 60;
+    }
+    
     count  = sessionTime * 60; 
     console.log('sessionTime', sessionTime);
     sessionLength.innerHTML = sessionTime;
