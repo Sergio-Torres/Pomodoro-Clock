@@ -12,10 +12,13 @@ const timeLabel = document.getElementById("timer-label");
 const startStop = document.getElementById("start-stop");
 const buttonReset = document.getElementById("button-reset");
 
+const musica = new Audio('audio/alarm.mp3');
+
 let breakTime=5;
 let sessionTime=25;
 let count = sessionTime * 60;
 let countBreak= breakTime * 60;
+
 
 //*-Settings decrement and increment (break-length and session-length)-*//
 breakDecrement.onclick = ()=>{
@@ -97,7 +100,10 @@ function breakWork(){
         time.innerHTML = `${minutesBreak}:${secondsBreak}`;
         //Whe the time is up, it will call de countDown function
         if(minutesBreak==0 && secondsBreak ==1){
-            count  = sessionTime * 60;       
+
+            count  = sessionTime * 60;  
+            time.innerHTML = sessionTime + ":00"
+            musica.play();     
             let callSession = countDown();
             return callSession;
         }
@@ -107,7 +113,7 @@ function breakWork(){
 }
 
 function countDown(){  
-   
+    
     clearInterval(intervalBreak);
     timeLabel.innerHTML = "Session"; 
     if(interval ==-1){     
@@ -121,6 +127,7 @@ function countDown(){
                 time.innerHTML = `${minutes}:${seconds}`;
                 //when the countDown finishes, it will call the rest function
                 if(minutes==0 && seconds ==1){
+                    musica.play();
                     let callBreak = breakWork();
                     return callBreak;
                 }

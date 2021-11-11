@@ -2,31 +2,45 @@
 <html>
 <head>
     <title>Pomodoro Clock</title>
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <!--Css-->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!--icon-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">    
 </head>
 <body>
-</body>
     <div class="container">
-        <div class ="pomodoro-clock">
+        <div class ="pomodoro">
             <div class ="title">
                 <h1>Pomodoro Clock</h1>
             </div>
             <div class="settings">
-                <label id="break-label">Break length</label>
-                <div>
-                    <button id="break-decrement">-</button>
-                    <span id="break-length">5</span>
-                    <button id="break-increment">+</button>
-                </div>
                 <label id="session-label">Session length</label>
-                <div>
-                    <button id="session-decrement">-<button>
+                <div class="session">
+                    <button id="session-increment"><i class="fas fa-sort-up"></i></button>
                     <span id="session-length">25</span>
-                    <button id="session-increment">+</button>
+                    <button id="session-decrement"><i class="fas fa-caret-down"></i></button>
+                    
+                </div>
+
+                <label id="break-label">Break length:</label>
+                <div class="break">
+                    <button id="break-increment"><i class="fas fa-sort-up"></i></button>
+                    <span id="break-length">5</span>
+                    <button id="break-decrement"><i class="fas fa-caret-down"></i></button>
                 </div>
             </div>
+            
             <div class="timer">
-                <label id="timer-label">Session</label>
-                <span id="time">25:00</span>
+                <div class="clock">
+                    <label class="sessionLabel" id="timer-label">Session</label>
+                    <span id="time">25:00</span>
+                </div>
             </div>
             <div class="controllers">
                 <button id="start-stop">Start</button>
@@ -34,6 +48,10 @@
             </div>
         </div>
     </div>
-    <p class="container"></p>
+    
     <script src="index.js"></script>
+    <footer>
+        <p>Disegned by <a href="https://github.com/Sergio-Torres">Sergio Torres</a> :)</p>
+    </footer>
+</body>
 </html>
